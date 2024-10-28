@@ -1,3 +1,7 @@
 ### Per Bot Info ###
 token.txt
 url.txt
+ipchannel.txt
+
+### Python Venv ###
+venv/

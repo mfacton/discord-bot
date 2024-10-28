@@ -1,2 +1,5 @@
 # discord-bot
-Discord Bots for Private Server
+Discord Bot for Private Server
+
+# Usage
+```sudo ./install.sh```
