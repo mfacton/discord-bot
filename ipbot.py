@@ -29,17 +29,6 @@ def get_local_ip():
 def get_public_ip():
     return requests.get("https://api.ipify.org").text
 
-def compose_message():
-    time = datetime.now().strftime("%b %d %I:%M %p")
-    pub_ip = get_public_ip()
-    local_ip = get_local_ip()
-
-    return (
-        #f"**Timestamp:**\t{time}\n"
-        f"**Local IP:**\t\t  {pub_ip:<15}\n"
-        f"**Public IP:**\t\t{local_ip:<15}\n"
-    )
-
 if __name__ == "__main__":
     client = discord.Client(intents = Intents.default())
 
@@ -47,7 +36,17 @@ if __name__ == "__main__":
     async def on_ready():
         print(f'{client.user} is running')
         channel = client.get_channel(get_channel())
-        await channel.send(compose_message())
+        
+        time = datetime.now().strftime("%b %d %I:%M %p")
+        pub_ip = get_public_ip()
+        local_ip = get_local_ip()
+
+        await channel.send(
+            f">>> **Local IP:**\t  {pub_ip}\n"\
+            f"**Public IP:**\t{local_ip}\n"
+        )
+        
         await client.close()
 
     client.run(get_token())
+
