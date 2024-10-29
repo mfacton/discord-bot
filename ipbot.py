@@ -42,8 +42,8 @@ if __name__ == "__main__":
         local_ip = get_local_ip()
 
         await channel.send(
-            f">>> **Local IP:**\t  {pub_ip}\n"\
-            f"**Public IP:**\t{local_ip}\n"
+            f">>> **Local IP:**\t  {local_ip}\n"\
+            f"**Public IP:**\t{pub_ip}\n"
         )
         
         await client.close()
