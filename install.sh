@@ -9,7 +9,7 @@ USER_HOME=$(eval echo ~$USER)
 
 cat << 'EOF' > discord-bot.sh
 #!/bin/bash
-if [ "$1" = "wlo1" ] && [ "$2" = "up" ]; then
+if [ "$1" = "enp42s0" ] && [ "$2" = "up" ]; then
     cd "${PROJ_DIR}"
     ./venv/bin/python3 ipbot.py
 fi
